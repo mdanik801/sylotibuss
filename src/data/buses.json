@@ -1,0 +1,296 @@
+[
+   {
+      "id": "bus_004",
+      "name": "Nazir Northern Circuit",
+      "district": "Sylhet",
+      "number": "SY-004",
+      "route": [
+         "Bishwanath",
+         "Kanaighat",
+         "Jaintapur",
+         "Khadimnagar",
+         "Lakkatura",
+         "University Gate",
+         "Sylhet Station"
+      ],
+      "start_time": "05:45 AM",
+      "end_time": "08:30 PM",
+      "interval_minutes": 40,
+      "phone_number": "01911-333222"
+   },
+   {
+      "id": "bus_009",
+      "name": "ENA Sylhet Rapid",
+      "district": "Sylhet",
+      "number": "SY-009",
+      "route": ["Airport", "Tilagor", "Lakkatura", "University Gate", "Sylhet Station"],
+      "start_time": "05:30 AM",
+      "end_time": "10:00 PM",
+      "interval_minutes": 20,
+      "phone_number": "01722-998877"
+   },
+   {
+      "id": "bus_019",
+      "name": "Sakura Sylhet Shuttle",
+      "district": "Sylhet",
+      "number": "SY-019",
+      "route": [
+         "Tilagor",
+         "Lakkatura",
+         "Hazrat Shahjalal Mazar",
+         "University Gate",
+         "Sylhet Station"
+      ],
+      "start_time": "05:30 AM",
+      "end_time": "09:30 PM",
+      "interval_minutes": 20,
+      "phone_number": "01777-889900"
+   },
+   {
+      "id": "bus_001",
+      "name": "ENA Sylhet Express",
+      "district": "Sylhet",
+      "number": "SY-001",
+      "route": [
+         "Zindabazar",
+         "Ambarkhana",
+         "Shibgonj",
+         "Medical",
+         "Amberkhana",
+         "Airport",
+         "Tilagor",
+         "Lakkatura",
+         "Bandarbazar",
+         "Subidbazar",
+         "Mazar Gate",
+         "University Gate",
+         "Central Bus Stand",
+         "Sylhet Station"
+      ],
+      "start_time": "06:00 AM",
+      "end_time": "10:00 PM",
+      "interval_minutes": 30,
+      "phone_number": "01723-456789"
+   },
+   {
+      "id": "bus_010",
+      "name": "Hanif Sylhet Local",
+      "district": "Sylhet",
+      "number": "SY-010",
+      "route": ["Zindabazar", "Amberkhana", "Medical", "Bandarbazar", "Sylhet Station"],
+      "start_time": "06:00 AM",
+      "end_time": "09:30 PM",
+      "interval_minutes": 25,
+      "phone_number": "01815-112233"
+   },
+   {
+      "id": "bus_025",
+      "name": "ENA Sylhet Local",
+      "district": "Sylhet",
+      "number": "SY-025",
+      "route": ["Zindabazar", "Amberkhana", "Medical", "Bandarbazar", "Sylhet Station"],
+      "start_time": "06:00 AM",
+      "end_time": "09:30 PM",
+      "interval_minutes": 25,
+      "phone_number": "01755-443322"
+   },
+   {
+      "id": "bus_032",
+      "name": "Nazir Sylhet Local",
+      "district": "Sylhet",
+      "number": "SY-032",
+      "route": ["Sylhet Station", "University Gate", "Bandarbazar", "Mazar Gate"],
+      "start_time": "06:00 AM",
+      "end_time": "09:00 PM",
+      "interval_minutes": 30,
+      "phone_number": "01900-223344"
+   },
+   {
+      "id": "bus_038",
+      "name": "Hanif Sylhet Express",
+      "district": "Sylhet",
+      "number": "SY-038",
+      "route": ["Sylhet Station", "Lakkatura", "Hazrat Shahjalal Mazar", "University Gate"],
+      "start_time": "06:00 AM",
+      "end_time": "09:30 PM",
+      "interval_minutes": 30,
+      "phone_number": "01821-998877"
+   },
+   {
+      "id": "bus_006",
+      "name": "Hanif Habiganj Link",
+      "district": "Habiganj",
+      "number": "HB-006",
+      "route": ["Habiganj", "Ajmiriganj", "Sylhet Station", "Tilagor", "University Gate"],
+      "start_time": "06:00 AM",
+      "end_time": "08:30 PM",
+      "interval_minutes": 45,
+      "phone_number": "01813-223344"
+   },
+   {
+      "id": "bus_021",
+      "name": "ENA Habiganj Express",
+      "district": "Habiganj",
+      "number": "HB-021",
+      "route": ["Habiganj", "Sreemongol", "Ajmiriganj", "Bahubal", "Sylhet Station"],
+      "start_time": "06:00 AM",
+      "end_time": "09:00 PM",
+      "interval_minutes": 50,
+      "phone_number": "01721-334455"
+   },
+   {
+      "id": "bus_033",
+      "name": "ENA Sylhet-Habiganj Rapid",
+      "district": "Sylhet",
+      "number": "SY-033",
+      "route": ["Sylhet Station", "Tilagor", "Sreemongol", "Habiganj"],
+      "start_time": "06:00 AM",
+      "end_time": "09:00 PM",
+      "interval_minutes": 35,
+      "phone_number": "01777-445566"
+   },
+   {
+      "id": "bus_003",
+      "name": "Sakura Western Link",
+      "district": "Sylhet",
+      "number": "SY-003",
+      "route": [
+         "Shibgonj",
+         "Bandarbazar",
+         "Subidbazar",
+         "Tilagor Eco Park",
+         "Lakkatura",
+         "Hazrat Shahjalal Mazar",
+         "University Gate"
+      ],
+      "start_time": "06:15 AM",
+      "end_time": "09:45 PM",
+      "interval_minutes": 30,
+      "phone_number": "01712-667788"
+   },
+   {
+      "id": "bus_035",
+      "name": "Sakura Sylhet Circular",
+      "district": "Sylhet",
+      "number": "SY-035",
+      "route": [
+         "Zindabazar",
+         "Amberkhana",
+         "Tilagor",
+         "Lakkatura",
+         "University Gate",
+         "Sylhet Station"
+      ],
+      "start_time": "06:15 AM",
+      "end_time": "09:15 PM",
+      "interval_minutes": 30,
+      "phone_number": "01712-334455"
+   },
+   {
+      "id": "bus_013",
+      "name": "ENA Sylhet-Habiganj Connector",
+      "district": "Sylhet",
+      "number": "SY-013",
+      "route": ["Sylhet Station", "Tilagor", "Sreemongol", "Habiganj", "Ajmiriganj", "Bahubal"],
+      "start_time": "06:15 AM",
+      "end_time": "09:00 PM",
+      "interval_minutes": 40,
+      "phone_number": "01788-556677"
+   },
+   {
+      "id": "bus_026",
+      "name": "Hanif Sylhet-Habiganj Fast",
+      "district": "Sylhet",
+      "number": "SY-026",
+      "route": ["Sylhet Station", "Tilagor", "Sreemongol", "Habiganj", "Ajmiriganj"],
+      "start_time": "06:15 AM",
+      "end_time": "09:00 PM",
+      "interval_minutes": 30,
+      "phone_number": "01855-998877"
+   },
+   {
+      "id": "bus_015",
+      "name": "Sakura Sylhet Express",
+      "district": "Sylhet",
+      "number": "SY-015",
+      "route": ["Lakkatura", "University Gate", "Sylhet Station", "Tilagor", "Bandarbazar"],
+      "start_time": "06:30 AM",
+      "end_time": "09:30 PM",
+      "interval_minutes": 30,
+      "phone_number": "01755-332211"
+   },
+   {
+      "id": "bus_022",
+      "name": "Hanif Sylhet-Habiganj Local",
+      "district": "Sylhet",
+      "number": "SY-022",
+      "route": ["University Gate", "Lakkatura", "Habiganj", "Baniachang"],
+      "start_time": "06:30 AM",
+      "end_time": "08:30 PM",
+      "interval_minutes": 40,
+      "phone_number": "01845-667788"
+   },
+   {
+      "id": "bus_002",
+      "name": "Hanif Eastern Loop",
+      "district": "Sylhet",
+      "number": "SY-002",
+      "route": [
+         "University Gate",
+         "Medical",
+         "Amberkhana",
+         "Airport",
+         "Tilagor",
+         "Lakkatura",
+         "Hazrat Shahjalal Mazar",
+         "Mazar Gate",
+         "Bandarbazar",
+         "Zindabazar"
+      ],
+      "start_time": "06:30 AM",
+      "end_time": "09:30 PM",
+      "interval_minutes": 25,
+      "phone_number": "01820-332211"
+   },
+   {
+      "id": "bus_034",
+      "name": "Hanif Habiganj Connector",
+      "district": "Habiganj",
+      "number": "HB-034",
+      "route": ["Habiganj", "Sreemongol", "Ajmiriganj"],
+      "start_time": "06:30 AM",
+      "end_time": "08:30 PM",
+      "interval_minutes": 40,
+      "phone_number": "01888-556677"
+   },
+   {
+      "id": "bus_005",
+      "name": "ENA Habiganj Connector",
+      "district": "Habiganj",
+      "number": "HB-005",
+      "route": [
+         "Habiganj",
+         "Sreemongol",
+         "Ajmiriganj",
+         "Bahubal",
+         "Baniachang",
+         "Lakkatura",
+         "Sylhet Station"
+      ],
+      "start_time": "07:00 AM",
+      "end_time": "09:30 PM",
+      "interval_minutes": 50,
+      "phone_number": "01987-654321"
+   },
+   {
+      "id": "bus_036",
+      "name": "Sakura Habiganj Express",
+      "district": "Habiganj",
+      "number": "HB-036",
+      "route": ["Habiganj", "Sreemongol", "Sylhet Station", "Tilagor"],
+      "start_time": "07:00 AM",
+      "end_time": "09:00 PM",
+      "interval_minutes": 40,
+      "phone_number": "01777-556677"
+   }
+]

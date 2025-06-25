@@ -1,0 +1,26 @@
+[
+   {
+      "id": 1,
+      "image": "https://w0.peakpx.com/wallpaper/193/72/HD-wallpaper-sks-e5v2-2018-bangladesh-bus-coach-hanif-enterprise-hino-malaysia-sks.jpg",
+      "route": "Sylhet ↔ Jaflong",
+      "description": "Departure every 30 minutes"
+   },
+   {
+      "id": 2,
+      "image": "https://enatransport.com.bd/assets/images/frontend/about/about.jpg",
+      "route": "Sylhet ↔ Srimangal",
+      "description": "Hourly departures"
+   },
+   {
+      "id": 3,
+      "image": "https://jessoreinfo.com/wp-content/uploads/2025/06/Green-Line-Paribahan-Jessore.png",
+      "route": "Sylhet ↔ Bichanakandi",
+      "description": "Morning and evening buses"
+   },
+   {
+      "id": 4,
+      "image": "https://www.bangladeshyp.com/img/bd/m/1609937309-11-london-express.jpg",
+      "route": "Sylhet ↔ Bichanakandi",
+      "description": "Morning and evening buses"
+   }
+]
