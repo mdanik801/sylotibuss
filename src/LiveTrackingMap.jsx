@@ -6,10 +6,9 @@ import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 
 // Custom icon URLs
-const userIconUrl = "https://cdn-icons-png.flaticon.com/512/2922/2922510.png"; // user/man icon
-const busStopIconUrl = "https://img.icons8.com/ios-filled/50/40C057/bus-stop.png"; // bus icon
+const userIconUrl = "https://cdn-icons-png.flaticon.com/512/2922/2922510.png";
+const busStopIconUrl = "https://img.icons8.com/ios-filled/50/40C057/bus-stop.png";
 
-// Create Leaflet icons for user and bus stop
 const userIcon = new L.Icon({
    iconUrl: userIconUrl,
    iconSize: [32, 32],
@@ -24,7 +23,7 @@ const busStopIcon = new L.Icon({
    popupAnchor: [0, -32],
 });
 
-// Fix Leaflet default icon issue in some build setups (optional now, but keep for fallback)
+// Optional fallback for default icons
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
    iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
@@ -32,7 +31,6 @@ L.Icon.Default.mergeOptions({
    shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
 });
 
-// Component to set map view to user location
 function SetViewToUserLocation({ location }) {
    const map = useMap();
    useEffect(() => {
@@ -43,7 +41,16 @@ function SetViewToUserLocation({ location }) {
    return null;
 }
 
-// Component to add routing control to map
+function ResizeMapOnLoad() {
+   const map = useMap();
+   useEffect(() => {
+      setTimeout(() => {
+         map.invalidateSize();
+      }, 300);
+   }, [map]);
+   return null;
+}
+
 function Routing({ from, to }) {
    const map = useMap();
 
@@ -52,14 +59,11 @@ function Routing({ from, to }) {
 
       const routingControl = L.Routing.control({
          waypoints: [L.latLng(from.lat, from.lng), L.latLng(to.lat, to.lng)],
-         lineOptions: { styles: [{ color: "#22c55e", weight: 5 }] }, // green route line
+         lineOptions: { styles: [{ color: "#22c55e", weight: 5 }] },
          createMarker: function (i, wp) {
             return L.marker(wp.latLng, {
                draggable: false,
-               icon:
-                  i === 0
-                     ? userIcon // user location icon (man/user)
-                     : busStopIcon, // bus stop icon (bus)
+               icon: i === 0 ? userIcon : busStopIcon,
             });
          },
          addWaypoints: false,
@@ -77,12 +81,12 @@ function Routing({ from, to }) {
 
 export default function LiveTrackingMap({ userLocation, nearestStopLocation }) {
    return (
-      <div className="rounded-lg overflow-hidden shadow-lg ring-2 ring-green-300">
+      <div className="w-full h-full">
          <MapContainer
-            center={userLocation || [24.8949, 91.8687]} // Sylhet fallback
+            center={userLocation || [24.8949, 91.8687]}
             zoom={15}
-            style={{ height: "500px", width: "100%" }}
             scrollWheelZoom={true}
+            style={{ width: "100%", height: "100%", minHeight: "300px" }}
             className="leaflet-container">
             <TileLayer
                attribution='&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
@@ -108,6 +112,7 @@ export default function LiveTrackingMap({ userLocation, nearestStopLocation }) {
             )}
 
             <SetViewToUserLocation location={userLocation} />
+            <ResizeMapOnLoad />
             {userLocation && nearestStopLocation && (
                <Routing from={userLocation} to={nearestStopLocation} />
             )}

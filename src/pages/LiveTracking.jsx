@@ -151,41 +151,39 @@ export default function LiveTracking() {
                         nearestStopLocation={nearestStop}
                      />
                   </div>
-
                   {/* Bus Panel */}
-                  <div className="mt-6 sm:mt-8 bg-gradient-to-r from-green-700 to-green-900 rounded-xl p-6 shadow-lg ring-2 ring-green-500 text-gray-100">
-                     <h3 className="text-xl sm:text-2xl font-extrabold mb-5 flex items-center gap-3">
-                        <FaBus className="text-green-400 animate-bounce" />
-                        {busesAtStop.length} Bus{busesAtStop.length !== 1 ? "es" : ""} serving{" "}
-                        <span className="decoration-green-400">"{nearestStop.name}"</span> stop
+                  <div className="mt-6 sm:mt-8 bg-gradient-to-r from-green-700 to-green-900 rounded-xl p-5 sm:p-6 shadow-lg ring-2 ring-green-500 text-white">
+                     <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-5 flex items-center gap-2 sm:gap-3">
+                        <FaBus className="text-green-300 animate-bounce text-xl sm:text-2xl" />
+                        {busesAtStop.length} Bus{busesAtStop.length !== 1 ? "es" : ""} serving
+                        <span className=" decoration-green-300 ml-1">"{nearestStop.name}"</span>
                      </h3>
 
                      {busesAtStop.length === 0 ? (
-                        <p className="font-medium italic text-base sm:text-lg text-green-300">
+                        <p className="font-medium italic text-base sm:text-lg text-green-200">
                            No buses found for this stop.
                         </p>
                      ) : (
-                        <ul className="space-y-3 max-h-60 overflow-y-auto scrollbar-thin scrollbar-thumb-green-600 scrollbar-track-green-900">
+                        <ul className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 max-h-[300px] overflow-y-auto scrollbar-thin scrollbar-thumb-green-600 scrollbar-track-green-900">
                            {busesAtStop.map((bus) => (
-                              <Link
-                                 to={`/bus/${bus.id}`}
+                              <li
                                  key={bus.id}
-                                 className="block font-semibold text-green-200 text-base sm:text-lg hover:underline"
-                                 title={`View details of ${bus.name}`}>
-                                 <li
-                                    className="flex items-center gap-4 p-3 rounded-lg bg-green-800 bg-opacity-60 shadow-md hover:shadow-xl transition-shadow cursor-pointer"
-                                    title={`Route: ${bus.route.join(" → ")}`}>
-                                    <FaBus className="text-green-400 text-xl flex-shrink-0" />
-                                    <div>
+                                 className="bg-green-800/70 hover:bg-green-700/80 border border-white rounded-lg p-4 flex items-start gap-3 shadow-md hover:shadow-xl transition duration-300">
+                                 <FaBus className="text-green-300 text-2xl mt-1 flex-shrink-0" />
+                                 <div className="flex-1">
+                                    <Link
+                                       to={`/bus/${bus.id}`}
+                                       title={`View details of ${bus.name}`}
+                                       className="block text-base sm:text-lg font-semibold ">
                                        {bus.name}
-                                       <p
-                                          className="text-green-300 text-sm truncate max-w-xs sm:max-w-xl"
-                                          title={bus.route.join(" → ")}>
-                                          Route: {bus.route.join(" → ")}
-                                       </p>
-                                    </div>
-                                 </li>
-                              </Link>
+                                    </Link>
+                                    <p
+                                       className="text-sm sm:text-base text-white opacity-90 mt-1 truncate"
+                                       title={bus.route.join(" → ")}>
+                                       Route: {bus.route.join(" → ")}
+                                    </p>
+                                 </div>
+                              </li>
                            ))}
                         </ul>
                      )}
