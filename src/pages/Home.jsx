@@ -13,9 +13,17 @@ import { Link } from "react-router";
 
 export default function Home() {
    const [spots, setSpots] = useState([]);
+   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
 
    useEffect(() => {
       setSpots(spotsData);
+   }, []);
+
+   useEffect(() => {
+      const interval = setInterval(() => {
+         setCurrentBannerIndex((prevIndex) => (prevIndex + 1) % routesData.length);
+      }, 2500);
+      return () => clearInterval(interval);
    }, []);
 
    const sliderSettings = {
@@ -25,7 +33,7 @@ export default function Home() {
       slidesToShow: 3,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 2500,
       responsive: [
          {
             breakpoint: 1024,
@@ -43,13 +51,13 @@ export default function Home() {
    };
 
    return (
-      <div className=" w-full bg-green-50">
+      <div className="w-full bg-green-50">
          {/* Hero Section */}
-         <div className="relative ">
+         <div className="relative">
             <img
-               src={banar}
-               alt="Sylhet Background"
-               className="w-full h-[500px] object-cover rounded-xl"
+               src={spotsData[currentBannerIndex].image}
+               alt="Banner"
+               className="w-full h-[500px] object-cover rounded-xl transition-opacity duration-1000"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/60 flex flex-col justify-center items-center text-white text-center px-4 rounded-xl">
                <h2 className="text-4xl font-bold mb-4">SYLOTI BUS</h2>
@@ -63,8 +71,7 @@ export default function Home() {
                   </Link>
                </div>
 
-               {/* Tourist Spots Grid */}
-               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full max-w-5xl ">
+               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full max-w-5xl">
                   {spots.map((spot) => (
                      <div
                         key={spot.id}
@@ -100,40 +107,13 @@ export default function Home() {
                ))}
             </Slider>
          </div>
+
          {/* Sylhet Holiday Destination Info Section */}
          <div className="bg-green-800 text-white py-12 px-6 text-center flex flex-col justify-center items-center">
             <h2 className="text-3xl font-bold mb-2">Sylhet Holiday Destination</h2>
             <p className="text-green-200 mb-8">Find the best of Sylhet!</p>
-            {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-               <div className="bg-white/10 p-6 rounded-xl">
-                  <h4 className="text-xl font-semibold mb-2">Rainforest Hike</h4>
-                  <p className="text-sm text-green-100 mb-3">
-                     Explore untouched rainforests and rich biodiversity.
-                  </p>
-                  <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
-                     Read More
-                  </button>
-               </div>
-               <div className="bg-white/10 p-6 rounded-xl">
-                  <h4 className="text-xl font-semibold mb-2">Waterfall & River</h4>
-                  <p className="text-sm text-green-100 mb-3">
-                     Discover majestic waterfalls and peaceful rivers.
-                  </p>
-                  <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
-                     Read More
-                  </button>
-               </div>
-               <div className="bg-white/10 p-6 rounded-xl">
-                  <h4 className="text-xl font-semibold mb-2">Green Tea Garden</h4>
-                  <p className="text-sm text-green-100 mb-3">
-                     Wander through Sylhet's iconic tea estates.
-                  </p>
-                  <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
-                     Read More
-                  </button>
-               </div>
-            </div> */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full max-w-5xl ">
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full max-w-5xl">
                {spots.map((spot) => (
                   <div
                      key={spot.id}
