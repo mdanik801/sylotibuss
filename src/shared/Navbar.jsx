@@ -8,6 +8,14 @@ export default function Navbar() {
    const [menuOpen, setMenuOpen] = useState(false);
    const lastScrollY = useRef(0);
 
+   const navLinks = [
+      { label: "Home", path: "/" },
+      { label: "Schedules", path: "/schedules" },
+      { label: "Live Tracking", path: "/live-tracking" },
+      { label: "Contact", path: "/contact" },
+      { label: "Developer Profile", path: "/developer_profile" },
+   ];
+
    useEffect(() => {
       const handleScroll = () => {
          if (window.scrollY < lastScrollY.current) {
@@ -38,24 +46,14 @@ export default function Navbar() {
 
          {/* Desktop Nav */}
          <div className="hidden md:flex space-x-6">
-            <Link to="/" className="text-gray-700 font-medium hover:text-green-800 transition">
-               Home
-            </Link>
-            <Link
-               to="/schedules"
-               className="text-gray-700 font-medium hover:text-green-800 transition">
-               Schedules
-            </Link>
-            <Link
-               to="/live-tracking"
-               className="text-gray-700 font-medium hover:text-green-800 transition">
-               Live Tracking
-            </Link>
-            <Link
-               to="/contact"
-               className="text-gray-700 font-medium hover:text-green-800 transition">
-               Contact
-            </Link>
+            {navLinks.map((link) => (
+               <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-gray-700 font-medium hover:text-green-800 transition">
+                  {link.label}
+               </Link>
+            ))}
          </div>
 
          {/* Mobile Menu Icon */}
@@ -68,30 +66,15 @@ export default function Navbar() {
          {/* Mobile Nav Drawer */}
          {menuOpen && (
             <div className="absolute top-full left-0 w-full bg-white shadow-md py-4 px-6 flex flex-col items-start space-y-3 md:hidden">
-               <Link
-                  to="/"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 font-medium hover:text-green-800 transition">
-                  Home
-               </Link>
-               <Link
-                  to="/schedules"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 font-medium hover:text-green-800 transition">
-                  Schedules
-               </Link>
-               <Link
-                  to="/live-tracking"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 font-medium hover:text-green-800 transition">
-                  Live Tracking
-               </Link>
-               <Link
-                  to="/contact"
-                  onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 font-medium hover:text-green-800 transition">
-                  Contact
-               </Link>
+               {navLinks.map((link) => (
+                  <Link
+                     key={link.path}
+                     to={link.path}
+                     onClick={() => setMenuOpen(false)}
+                     className="text-gray-700 font-medium hover:text-green-800 transition">
+                     {link.label}
+                  </Link>
+               ))}
             </div>
          )}
       </nav>
