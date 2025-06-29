@@ -14,6 +14,7 @@ export default function Navbar() {
       { label: "Live Tracking", path: "/live-tracking" },
       { label: "Contact", path: "/contact" },
       { label: "Developer Profile", path: "/developer_profile" },
+      { label: "Investor", path: "/investor" },
    ];
 
    useEffect(() => {

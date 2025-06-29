@@ -8,6 +8,7 @@ import LiveTracking from "./pages/LiveTracking"; // ✅ LiveTracking added
 import BusDetail from "./pages/BusDetail";
 import NotFound from "./shared/NotFound";
 import Develop_Profile from "./shared/Develop_Profile";
+import Investor from "./shared/Investor";
 
 function App() {
    return (
@@ -20,6 +21,7 @@ function App() {
                <Route path="/schedules" element={<BusSearch />} />
                <Route path="/contact" element={<Contact />} />
                <Route path="/developer_profile" element={<Develop_Profile />} />
+               <Route path="/investor" element={<Investor />} />
                <Route path="/bus/:busId" element={<BusDetail />} />
                <Route path="/live-tracking" element={<LiveTracking />} /> {/* ✅ Route added */}
             </Routes>
