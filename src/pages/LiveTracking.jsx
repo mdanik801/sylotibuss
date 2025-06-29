@@ -166,9 +166,7 @@ export default function LiveTracking() {
                      ) : (
                         <ul className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 max-h-[300px] overflow-y-auto scrollbar-thin scrollbar-thumb-green-600 scrollbar-track-green-900">
                            {busesAtStop.map((bus) => (
-                              <li
-                                 key={bus.id}
-                                 className="bg-green-800/70 hover:bg-green-700/80 border border-white rounded-lg p-4 flex items-start gap-3 shadow-md hover:shadow-xl transition duration-300">
+                              <li key={bus.id}>
                                  <FaBus className="text-green-300 text-2xl mt-1 flex-shrink-0" />
                                  <div className="flex-1">
                                     <Link

@@ -12,7 +12,7 @@ function App() {
    return (
       <>
          <Navbar />
-         <div className="p-4">
+         <div className=" mt-15 p-4">
             <Routes>
                <Route path="/" element={<Home />} />
                <Route path="*" element={<NotFound />} />
